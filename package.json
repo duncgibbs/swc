@@ -1,0 +1,38 @@
+{
+  "name": "swc",
+  "version": "0.1.0",
+  "description": "A Simple Web Component library",
+  "main": "dist/swc.js",
+  "jsnext:main": "index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasturiano/swc.git"
+  },
+  "keywords": [
+    "web",
+    "component",
+    "simple"
+  ],
+  "author": {
+    "name": "Vasco Asturiano",
+    "url": "http://bl.ocks.org/vasturiano"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasturiano/swc/issues"
+  },
+  "homepage": "https://github.com/vasturiano/swc",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && rollup -f umd -n SWC --banner \"$(preamble)\" -o dist/swc.js -- index.js",
+    "watch": "rollup -w -f umd -n SWC -o dist/swc.js -- index.js",
+    "minify": "uglifyjs dist/swc.js -o dist/swc.min.js -c -m --preamble \"$(preamble)\"",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "package-preamble": "~0.0.2",
+    "rollup": "~0.41.6",
+    "rollup-watch": "^3.2",
+    "uglify-js": "^2.8"
+  }
+}
