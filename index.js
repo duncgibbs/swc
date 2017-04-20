@@ -21,8 +21,6 @@ export function createComponent(config = {}) {
 
 		// Component constructor
 		function comp(nodeElement) {
-			state.domNode = nodeElement;
-
 			initStatic(nodeElement);
 			digest();
 
