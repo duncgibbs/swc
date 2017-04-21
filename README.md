@@ -7,13 +7,6 @@ A Simple Web Component library, inspired by the [reusable charts pattern](https:
 ## Quick start
 
 ```
-npm install
-npm run build
-```
-
-## How to import
-
-```
 import { * as SWC } from 'swc';
 ```
 or
@@ -61,4 +54,11 @@ let myText = ColoredText();
 myText(<myDOMElement>)
     .color('blue')
     .text('foo');
+```
+
+## How to build
+
+```
+npm install
+npm run build
 ```
