@@ -44,6 +44,19 @@ export function createComponent(config = {}) {
 			}
 		});
 
+		// Reset all component props to their default value
+		comp.resetState = function() {
+			props.forEach(prop => {
+				state[prop.name] = prop.initVal;
+				prop.onChange(prop.initVal);
+			});
+			digest();   // Re-digest after resetting state
+
+			return comp;
+		};
+
+		//
+
 		function initStatic(nodeElement) {
 			initFn(nodeElement, state);
 			state.initialised = true;
