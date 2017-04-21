@@ -45,12 +45,12 @@ export function createComponent(config = {}) {
 		});
 
 		// Reset all component props to their default value
-		comp.resetState = function() {
+		comp.resetProps = function() {
 			props.forEach(prop => {
 				state[prop.name] = prop.initVal;
 				prop.onChange(prop.initVal);
 			});
-			digest();   // Re-digest after resetting state
+			digest();	// Re-digest after resetting props
 
 			return comp;
 		};
