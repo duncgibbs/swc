@@ -26,13 +26,13 @@
     "build": "rm -rf dist && mkdir dist && rollup -f umd -n SWC --banner \"$(preamble)\" -o dist/swc.js -- index.js",
     "watch": "rollup -w -f umd -n SWC -o dist/swc.js -- index.js",
     "minify": "uglifyjs dist/swc.js -o dist/swc.min.js -c -m --preamble \"$(preamble)\"",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build && npm run minify"
   },
   "dependencies": {},
   "devDependencies": {
     "package-preamble": "~0.0.2",
     "rollup": "~0.41.6",
     "rollup-watch": "^3.2",
-    "uglify-js": "^2.8"
+    "uglify-js-es6": "^2.8.9"
   }
 }
