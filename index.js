@@ -56,7 +56,7 @@ export function createComponent(config = {}, stateFunctions = []) {
         };
 
         stateFunctions.forEach((stateFn) => {
-            comp[stateFn.name] = () => stateFn(state);
+            comp[stateFn.name] = stateFn.bind(state);
         });
 
         //
